@@ -173,13 +173,17 @@ export func microsoft(
  *
  * @param keyJson {string} the key file's content
  * @return {ServiceAccount} the key
- * @throws {Error} kind "oauthext" if it is not such a key file
+ * @throws {Error} kind "oauthext" if it is not such a key file; kind "limit" if it nests past `json`'s decoding caps
  */
 export func serviceAccount(keyJson as string) {
     def key as json.Value;
     try {
         $key = json.decode($keyJson);
     } catch (e) {
+        # a decoding cap (a key file nested past json's limits) stays kind "limit"
+        if ($e.kind == "limit") {
+            throw $e;
+        }
         fail("the service-account key is not valid JSON: " + shown($e.message));
     }
     if (json.typeOf($key) != "map") {

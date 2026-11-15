@@ -16,6 +16,8 @@ The presets return the bundled module's `oauth.Config`, and the logins its
 `oauth.isExpired`, `oauth.save` and the rest. Errors about the deck's own input
 are kind `"oauthext"`; a refusal from the token endpoint stays an `oauth.OAuthError`
 (kind `"oauth"`, with the provider's `errorCode`, `description` and `status`).
+An unreachable endpoint is `http`'s `net.NetError` (kind `"net"`), and a key
+file or reply past `json`'s decoding caps kind `"limit"`.
 
 ## Presets
 

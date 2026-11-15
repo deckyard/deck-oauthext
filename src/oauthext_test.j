@@ -446,3 +446,36 @@ func testANonJsonAnswerFromGoogleIsAnOauthError() {
     httpd.shutdown($srv);
     testing.assertEqual($msg, "oauth: non-JSON response from the token endpoint (HTTP 502)");
 }
+
+# A key file nested past json's caps is kind "limit", not an oauthext error,
+# through serviceAccount and googleServiceAccount alike.
+func testAKeyFilePastTheDecodingCapIsALimit() {
+    def deep as string init strings.repeat("[", 1001);
+    try {
+        serviceAccount($deep);
+        throw Error{kind: "missed", message: "a decoding cap"};
+    } catch (e) {
+        testing.assertEqual($e.kind, "limit");
+    }
+    try {
+        googleServiceAccount($deep, "https://www.googleapis.com/auth/drive");
+        throw Error{kind: "missed", message: "a decoding cap"};
+    } catch (e) {
+        testing.assertEqual($e.kind, "limit");
+    }
+}
+
+# A token endpoint that refuses the connection is http's net.NetError (kind
+# "net"), passed through oauth and the deck unchanged.
+func testAnUnreachableEndpointIsANetError() {
+    def srv as httpd.Server init httpd.listen("127.0.0.1:0");
+    def url as string init "http://" + httpd.address($srv) + "/token";
+    httpd.shutdown($srv);
+    try {
+        googleServiceAccount(keyFile($url).file, "https://www.googleapis.com/auth/drive");
+        throw Error{kind: "missed", message: "a refused connection"};
+    } catch (e) {
+        testing.assertEqual($e.kind, "net");
+        testing.assertEqual($e.reason, "refused");
+    }
+}
