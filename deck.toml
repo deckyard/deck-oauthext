@@ -1,6 +1,6 @@
 [package]
 name = "@jennifer/oauthext"
-version = "0.1.0"
+version = "0.2.0"
 description = "Vendor OAuth2 for the oauth module: Google and Microsoft presets, Google service accounts"
 license = "LGPL-3.0-only"
 authors = ["mplx <mplx@jennifer-lang.dev>"]
