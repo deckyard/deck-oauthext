@@ -40,7 +40,7 @@ def cfg as oauth.Config init oauthext.microsoft("common", $clientId, "",
 
 ## Requirements
 
-Jennifer 0.26.0 or newer, the default `jennifer` binary (the deck needs
+Jennifer 0.27.0 or newer, the default `jennifer` binary (the deck needs
 `net`; the stock `jennifer-tiny` has no network driver). RS256 signing for
 service accounts is in the default binary.
 

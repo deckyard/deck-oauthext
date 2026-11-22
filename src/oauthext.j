@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: LGPL-3.0-only
 # SPDX-FileCopyrightText: Copyright (C) 2026 mplx <mplx@jennifer-lang.dev>
-# pragma-jennifer-version: >=0.26.0
+# pragma-jennifer-version: >=0.27.0
 # pragma-jennifer-capability: net
 
 /**
@@ -22,7 +22,7 @@
  *       fs.readString("service-account.json"),
  *       "https://www.googleapis.com/auth/cloud-platform");
  */
-use convert;
+use encoding;
 use json;
 use lists;
 use regex;
@@ -99,7 +99,7 @@ func fail(message as string) {
 func shown(s as string) {
     def t as string init $s;
     if (len($t) > 80) {
-        $t = strings.substring($t, 0, 80) + "...";
+        $t = $t[..80] + "...";
     }
     return "\"" + regex.replace(CONTROL, $t, "?") + "\"";
 }
@@ -303,11 +303,11 @@ func authority(url as string) {
     if ($at < 0) {
         return "";
     }
-    def rest as string init strings.substring($url, $at + 3);
+    def rest as string init $url[$at + 3..];
     for (def stop in ["/", "?", "#"]) {
         def k as int init strings.indexOf($rest, $stop);
         if ($k >= 0) {
-            $rest = strings.substring($rest, 0, $k);
+            $rest = $rest[..$k];
         }
     }
     return $rest;
@@ -342,7 +342,7 @@ export func serviceAccountAssertion(sa as ServiceAccount, scope as string, subje
             $sa.tokenUri,
             SERVICE_ACCOUNT_LIFETIME,
             $extra,
-            convert.bytesFromString("utf-8", $sa.privateKey),
+            encoding.encode("utf-8", $sa.privateKey),
             $sa.privateKeyId);
     } catch (e) {
         fail("cannot sign with the service-account key: " + $e.message);

@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: LGPL-3.0-only
 # SPDX-FileCopyrightText: Copyright (C) 2026 mplx <mplx@jennifer-lang.dev>
-# pragma-jennifer-version: >=0.26.0
+# pragma-jennifer-version: >=0.27.0
 
 /**
  * White-box tests for oauthext: jennifer test src/oauthext_test.j
@@ -44,7 +44,7 @@ func keyFile(tokenUri as string) {
     $k = json.set($k, "/type", "service_account");
     $k = json.set($k, "/project_id", "demo-project");
     $k = json.set($k, "/private_key_id", "0123abcd");
-    $k = json.set($k, "/private_key", convert.stringFromBytes("utf-8", $kp.private));
+    $k = json.set($k, "/private_key", encoding.decode("utf-8", $kp.private));
     $k = json.set($k, "/client_email", "robot@demo-project.iam.gserviceaccount.com");
     $k = json.set($k, "/client_id", "1234567890");
     $k = json.set($k, "/token_uri", $tokenUri);
@@ -104,7 +104,7 @@ func tokenEndpoint(srv as httpd.Server, status as int, body as string) {
     def seen as Posted init Posted{
         method: httpd.method($req),
         contentType: httpd.header($req, "Content-Type"),
-        form: uri.parseQuery(convert.stringFromBytes("utf-8", httpd.body($req)))
+        form: uri.parseQuery(encoding.decode("utf-8", httpd.body($req)))
     };
     httpd.setHeader($req, "Content-Type", "application/json");
     httpd.respond($req, $status, $body);
@@ -149,7 +149,7 @@ func testMicrosoftRefusesATenantThatIsNotAName() {
         "a?b",
         "a#b",
         "%2e%2e",
-        strings.repeat("a", 254)
+        strings.replicate("a", 254)
     ]) {
         def msg as string init "";
         try {
@@ -450,7 +450,7 @@ func testANonJsonAnswerFromGoogleIsAnOauthError() {
 # A key file nested past json's caps is kind "limit", not an oauthext error,
 # through serviceAccount and googleServiceAccount alike.
 func testAKeyFilePastTheDecodingCapIsALimit() {
-    def deep as string init strings.repeat("[", 1001);
+    def deep as string init strings.replicate("[", 1001);
     try {
         serviceAccount($deep);
         throw Error{kind: "missed", message: "a decoding cap"};

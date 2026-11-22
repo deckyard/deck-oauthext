@@ -1,7 +1,7 @@
 #!/usr/bin/env -S jennifer run
 # SPDX-License-Identifier: LGPL-3.0-only
 # SPDX-FileCopyrightText: Copyright (C) 2026 mplx <mplx@jennifer-lang.dev>
-# pragma-jennifer-version: >=0.26.0
+# pragma-jennifer-version: >=0.27.0
 
 /**
  * Log in as a Google service account and list a Cloud Storage bucket:
@@ -15,7 +15,6 @@ use io;
 use json;
 use os;
 use regex;
-use strings;
 
 import "http.j" as http;
 import "uri.j" as uri;
@@ -39,7 +38,7 @@ if ($keyPath == "" or $bucket == "") {
             # the server's text: a short excerpt, without control characters
             def excerpt as string init $r.body;
             if (len($excerpt) > 200) {
-                $excerpt = strings.substring($excerpt, 0, 200) + "...";
+                $excerpt = $excerpt[..200] + "...";
             }
             io.printf(
                 "HTTP %d: %s\n",

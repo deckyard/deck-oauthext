@@ -120,9 +120,10 @@ otherwise, so CI runs them offline.
 
 ## Dependencies on the interpreter
 
-- The floor is `>=0.26.0`: `oauth.jwtBearer`, `oauth.jwtAssertion` and
-  `jwt.signWithKid` are not in 0.25.0, and `oauth.Config.authorizeUrl` and
-  `oauth.Token`'s `idToken` / `extra` came with 0.26.0.
+- The floor is `>=0.27.0`, for the UTF-8 codecs of `encoding.encode` /
+  `decode` and `strings.replicate`. `oauth.jwtBearer`, `oauth.jwtAssertion`
+  and `jwt.signWithKid` are not in 0.25.0, and `oauth.Config.authorizeUrl`
+  and `oauth.Token`'s `idToken` / `extra` came with 0.26.0.
 - `oauth.OAuthError` and its `errorCode` field (M28.51); the `tls` field of
   `oauth.Config` (M28.47) may be left out of a literal, so the presets work
   with and without it.
