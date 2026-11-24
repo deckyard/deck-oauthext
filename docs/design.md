@@ -12,7 +12,7 @@ the bundled `oauth` module:
   provider's token, device-authorization and authorization endpoints, for
   the device flow, the browser sign-in (`oauth.authorize`), refresh and
   client credentials.
-- **Google service accounts**: `serviceAccount` reads and checks a JSON key
+- **Google™ service accounts**: `serviceAccount` reads and checks a JSON key
   file, `serviceAccountAssertion` signs the RFC 7523 assertion with Google's
   conventions, and `googleServiceAccount` / `googleServiceAccountAs` trade it
   for a token through `oauth.jwtBearer`.
@@ -27,7 +27,7 @@ It deliberately is not:
 - **A token cache.** A service-account token lasts about an hour and has no
   refresh token; the caller asks for a new one when `oauth.isExpired` says
   so.
-- **Other providers yet.** Okta, Salesforce, Oracle and the like are a deck
+- **Other providers yet.** Okta™, Salesforce™, Oracle™ and the like are a deck
   change when someone needs them, never a core one. Providers that publish
   standard metadata are already served by `oauth.discover`.
 
@@ -46,7 +46,7 @@ It deliberately is not:
   account, `aud` the token URI, `scope` as an extra claim, `sub` the user for
   domain-wide delegation, and a lifetime of `SERVICE_ACCOUNT_LIFETIME`
   (3600 s, Google's maximum).
-- **Microsoft tenants by name.** `microsoft` builds the v2.0 endpoint URLs
+- **Microsoft™ tenants by name.** `microsoft` builds the v2.0 endpoint URLs
   from the tenant instead of reading metadata, because the multi-tenant
   `common`, `organizations` and `consumers` metadata names a placeholder
   issuer that `oauth.discover` cannot use.

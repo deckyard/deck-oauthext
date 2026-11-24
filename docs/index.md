@@ -10,14 +10,14 @@ and JWT-bearer grants, endpoint discovery, and token storage. What belongs to on
 lives here, so a new provider is a deck change, never a change to the
 interpreter:
 
-- **Presets**: `oauth.Config` values for Google and Microsoft Entra ID, for
+- **Presets**: `oauth.Config` values for Google™ and Microsoft Entra™ ID, for
   the browser sign-in, the device flow and refresh (mail through IMAP and
-  SMTP, Microsoft Graph, Google APIs as a user), including Entra's
+  SMTP, Microsoft Graph™, Google APIs as a user), including Entra's
   multi-tenant endpoints, which `oauth.discover` cannot read.
 - **Google service accounts**: a server logs in as a service account from its
-  JSON key file, with no user and no browser. This opens every Google Cloud
-  API (Cloud Storage, BigQuery, Pub/Sub) and, with domain-wide delegation,
-  Google Workspace.
+  JSON key file, with no user and no browser. This opens every Google Cloud™
+  API (Cloud Storage, BigQuery™, Pub/Sub) and, with domain-wide delegation,
+  Google Workspace™.
 
 The presets were `oauth.google` and `oauth.microsoft` in the bundled module up
 to Jennifer 0.25; [Moving from oauth](migrating.md) shows the change.
@@ -66,3 +66,12 @@ try {
     io.printf("%s: %s\n", $e.kind, $e.message);
 }
 ```
+
+## Trademarks
+
+Google™, Google Cloud™ and Google Workspace™ are trademarks of Google LLC.
+Microsoft™ and Microsoft Entra™ are trademarks of Microsoft Corporation. Other
+product and company names may be trademarks of their respective owners. They
+are used only to identify the products this deck works with. This deck is an
+independent project, not affiliated with, sponsored or endorsed by Google LLC
+or Microsoft Corporation.

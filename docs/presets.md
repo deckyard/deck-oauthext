@@ -10,17 +10,17 @@ terminal, `oauth.authorize` / `awaitCode` / `exchangeCode` for a browser
 sign-in, `oauth.refresh` to keep a token alive, `oauth.clientCredentials` for
 an application acting as itself.
 
-For Google, or an Entra ID tenant named by its GUID, `oauth.discover` gives
-the same endpoints from the provider's metadata. The Microsoft preset is still
+For Google™, or an Entra™ ID tenant named by its GUID, `oauth.discover` gives
+the same endpoints from the provider's metadata. The Microsoft™ preset is still
 needed for `common`, `organizations`, `consumers` and a tenant named by a
 domain: their metadata names a placeholder issuer or the tenant's GUID, which
 `discover` refuses because it is not the issuer asked for.
 
 ## Google
 
-Gmail, Calendar and most Google APIs need the browser sign-in: Google's device
+Gmail™, Calendar and most Google APIs need the browser sign-in: Google's device
 flow allows only a short list of scopes (`openid`, `email`, `profile`,
-`drive.file`, `drive.appdata` and some YouTube ones). Use an OAuth client of
+`drive.file`, `drive.appdata` and some YouTube™ ones). Use an OAuth client of
 the type "Desktop app"; Google accepts any loopback port as its redirect.
 
 ```jennifer

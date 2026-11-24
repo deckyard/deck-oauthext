@@ -41,6 +41,6 @@ def cfg as oauth.Config init oauth.Config{
 };
 ```
 
-A Google service account built by hand from `oauth.jwtAssertion` and
+A Google™ service account built by hand from `oauth.jwtAssertion` and
 `oauth.jwtBearer` keeps working; `oauthext.googleServiceAccount` does the same
 in one call, with the key file checked first.

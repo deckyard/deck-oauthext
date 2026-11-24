@@ -3,7 +3,7 @@
 
 # Google service accounts
 
-A service account is a Google identity for a program. It logs in with a key
+A service account is a Google™ identity for a program. It logs in with a key
 pair instead of a password: Google keeps the public key, and you download the
 private key as a JSON key file. To get a token the program signs a short-lived
 JWT with that key and trades it at Google's token endpoint (RFC 7523, the JWT
@@ -52,7 +52,7 @@ what the token may be used for.
 
 ## Acting for a user
 
-With Google Workspace domain-wide delegation, an administrator lets a service
+With Google Workspace™ domain-wide delegation, an administrator lets a service
 account act for the domain's users. `googleServiceAccountAs` names the user in
 the assertion's `sub`:
 

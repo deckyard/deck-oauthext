@@ -23,8 +23,8 @@ file or reply past `json`'s decoding caps kind `"limit"`.
 
 | Function | Returns | Does |
 |---|---|---|
-| `oauthext.google(clientId as string, clientSecret as string, scope as string)` | `oauth.Config` | Google's token, device and authorization endpoints |
-| `oauthext.microsoft(tenant as string, clientId as string, clientSecret as string, scope as string)` | `oauth.Config` | a Microsoft Entra ID tenant's v2.0 token, device and authorization endpoints; the tenant is `common`, `organizations`, `consumers`, a GUID or a domain, anything else is an error |
+| `oauthext.google(clientId as string, clientSecret as string, scope as string)` | `oauth.Config` | Google™'s token, device and authorization endpoints |
+| `oauthext.microsoft(tenant as string, clientId as string, clientSecret as string, scope as string)` | `oauth.Config` | a Microsoft Entra™ ID tenant's v2.0 token, device and authorization endpoints; the tenant is `common`, `organizations`, `consumers`, a GUID or a domain, anything else is an error |
 
 ## Google service accounts
 
@@ -54,4 +54,4 @@ file or reply past `json`'s decoding caps kind `"limit"`.
 | `privateKey as string` | its PKCS#8 PEM private key |
 | `privateKeyId as string` | the key's id, the assertion's `kid` |
 | `tokenUri as string` | the token endpoint the assertion is for |
-| `projectId as string` | the Google Cloud project, `""` if the file names none |
+| `projectId as string` | the Google Cloud™ project, `""` if the file names none |

@@ -5,9 +5,9 @@
 [![release](https://img.shields.io/github/v/release/jennifer-language/deck-oauthext)](https://github.com/jennifer-language/deck-oauthext/releases/latest)
 
 Vendor-specific OAuth2 for the bundled `oauth` module of
-[Jennifer](https://jennifer-lang.dev/): `Config` presets for Google and
-Microsoft Entra ID, and Google service-account logins from a JSON key file
-(the RFC 7523 JWT bearer grant), which open Google Cloud and Workspace APIs to
+[Jennifer](https://jennifer-lang.dev/): `Config` presets for Google™ and
+Microsoft Entra™ ID, and Google service-account logins from a JSON key file
+(the RFC 7523 JWT bearer grant), which open Google Cloud™ and Workspace™ APIs to
 a program with no user. The presets were `oauth.google` / `oauth.microsoft` in
 the bundled module up to Jennifer 0.25.
 
@@ -59,3 +59,12 @@ LGPL-3.0-only, see [LICENSE](LICENSE). Copyright (C) 2026 mplx &lt;mplx@jennifer
 
 `tools/check-headers.sh` checks every source file's SPDX header against
 `deck.toml`.
+
+## Trademarks
+
+Google™, Google Cloud™ and Google Workspace™ are trademarks of Google LLC.
+Microsoft™ and Microsoft Entra™ are trademarks of Microsoft Corporation. Other
+product and company names may be trademarks of their respective owners. They
+are used only to identify the products this deck works with. This deck is an
+independent project, not affiliated with, sponsored or endorsed by Google LLC
+or Microsoft Corporation.
