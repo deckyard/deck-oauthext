@@ -10,12 +10,12 @@ the same parameters, and the bundled module has only the standard grants.
 Add the deck and change the prefix:
 
 ```sh
-jvc add @jennifer/oauthext
+jvc add @deckyard/oauthext
 ```
 
 ```jennifer
 import "oauth.j" as oauth;
-import "@jennifer/oauthext/" as oauthext;
+import "@deckyard/oauthext/" as oauthext;
 
 # before: oauth.google($id, $secret, $scope)
 def cfg as oauth.Config init oauthext.google($id, $secret, $scope);

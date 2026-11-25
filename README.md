@@ -1,8 +1,8 @@
-# @jennifer/oauthext
+# @deckyard/oauthext
 
-[![test](https://github.com/jennifer-language/deck-oauthext/actions/workflows/test.yml/badge.svg)](https://github.com/jennifer-language/deck-oauthext/actions/workflows/test.yml)
-[![Documentation](https://img.shields.io/badge/docs-github%20pages-blue)](https://jennifer-language.github.io/deck-oauthext/)
-[![release](https://img.shields.io/github/v/release/jennifer-language/deck-oauthext)](https://github.com/jennifer-language/deck-oauthext/releases/latest)
+[![test](https://github.com/deckyard/deck-oauthext/actions/workflows/test.yml/badge.svg)](https://github.com/deckyard/deck-oauthext/actions/workflows/test.yml)
+[![Documentation](https://img.shields.io/badge/docs-github%20pages-blue)](https://deckyard.github.io/deck-oauthext/)
+[![release](https://img.shields.io/github/v/release/deckyard/deck-oauthext)](https://github.com/deckyard/deck-oauthext/releases/latest)
 
 Vendor-specific OAuth2 for the bundled `oauth` module of
 [Jennifer](https://jennifer-lang.dev/): `Config` presets for Google™ and
@@ -11,12 +11,15 @@ Microsoft Entra™ ID, and Google service-account logins from a JSON key file
 a program with no user. The presets were `oauth.google` / `oauth.microsoft` in
 the bundled module up to Jennifer 0.25.
 
-**[Documentation](https://jennifer-language.github.io/deck-oauthext/)**
+Up to 0.3.0 this deck was `@jennifer/oauthext`. To switch, change the `[decks]`
+entry to `"@deckyard/oauthext" = "^0.4.0"` and the imports to `"@deckyard/oauthext/"`.
+
+**[Documentation](https://deckyard.github.io/deck-oauthext/)**
 
 ## Install
 
 ```sh
-jvc add @jennifer/oauthext
+jvc add @deckyard/oauthext
 ```
 
 This vendors the deck to `vendor/<scope>/oauthext/`. Without `jvc`, unpack the
@@ -28,7 +31,7 @@ This vendors the deck to `vendor/<scope>/oauthext/`. Without `jvc`, unpack the
 use fs;
 
 import "oauth.j" as oauth;
-import "@jennifer/oauthext/" as oauthext;
+import "@deckyard/oauthext/" as oauthext;
 
 def tok as oauth.Token init oauthext.googleServiceAccount(
     fs.readString("service-account.json"),

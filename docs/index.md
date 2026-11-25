@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: LGPL-3.0-only -->
 <!-- SPDX-FileCopyrightText: Copyright (C) 2026 mplx <mplx@jennifer-lang.dev> -->
 
-# @jennifer/oauthext
+# @deckyard/oauthext
 
 Vendor-specific OAuth2 for the bundled [`oauth`](https://jennifer-lang.dev/modules/oauth.html)
 module. `oauth` keeps the standard mechanics: the client-credentials (with a
@@ -29,7 +29,7 @@ they need:
 
 ```jennifer
 import "oauth.j" as oauth;
-import "@jennifer/oauthext/" as oauthext;
+import "@deckyard/oauthext/" as oauthext;
 ```
 
 The trailing slash resolves to the entry module.
@@ -65,6 +65,15 @@ try {
 } catch (e) {
     io.printf("%s: %s\n", $e.kind, $e.message);
 }
+```
+
+## Moving from `@jennifer/oauthext`
+
+Up to 0.3.0 this deck was `@jennifer/oauthext`. Change the `[decks]` entry to
+`"@deckyard/oauthext" = "^0.4.0"` and the imports:
+
+```jennifer
+import "@deckyard/oauthext/" as oauthext;
 ```
 
 ## Trademarks

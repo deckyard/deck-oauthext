@@ -3,12 +3,12 @@
 
 # oauthext cheatsheet
 
-Every export of `@jennifer/oauthext`. The guides are listed in
+Every export of `@deckyard/oauthext`. The guides are listed in
 [the introduction](index.md).
 
 ```jennifer
 import "oauth.j" as oauth;
-import "@jennifer/oauthext/" as oauthext;
+import "@deckyard/oauthext/" as oauthext;
 ```
 
 The presets return the bundled module's `oauth.Config`, and the logins its

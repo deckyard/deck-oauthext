@@ -1,6 +1,6 @@
 [package]
-name = "@jennifer/oauthext"
-version = "0.3.0"
+name = "@deckyard/oauthext"
+version = "0.4.0"
 description = "Vendor OAuth2 for the oauth module: Google and Microsoft presets, Google service accounts"
 license = "LGPL-3.0-only"
 authors = ["mplx <mplx@jennifer-lang.dev>"]
@@ -10,9 +10,9 @@ capabilities = ["net"]
 keywords = ["oauth", "oauth2", "google", "microsoft", "entra", "service-account", "jwt"]
 
 [package.urls]
-deck = "https://raw.githubusercontent.com/jennifer-language/deck-oauthext/main/deck.toml"
-homepage = "https://github.com/jennifer-language/deck-oauthext"
-manual = "https://jennifer-language.github.io/deck-oauthext/"
+deck = "https://raw.githubusercontent.com/deckyard/deck-oauthext/main/deck.toml"
+homepage = "https://github.com/deckyard/deck-oauthext"
+manual = "https://deckyard.github.io/deck-oauthext/"
 
 [engines]
 jennifer = ">=0.27.0"

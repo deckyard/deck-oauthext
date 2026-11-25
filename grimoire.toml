@@ -1,7 +1,7 @@
-# Grimoire book configuration for the @jennifer/oauthext documentation.
+# Grimoire book configuration for the @deckyard/oauthext documentation.
 
 [book]
-title = "@jennifer/oauthext"
+title = "@deckyard/oauthext"
 description = "Vendor OAuth2 for the oauth module: Google and Microsoft presets, Google service accounts"
 language = "en"
 src = "docs"
@@ -18,10 +18,10 @@ navPosition = "left"
 tocPosition = "right"
 tocDepth = 3
 sectionNumbers = true
-titleUrl = "https://jennifer-language.github.io/deck-oauthext/"
-repoUrl = "https://github.com/jennifer-language/deck-oauthext"
+titleUrl = "https://deckyard.github.io/deck-oauthext/"
+repoUrl = "https://github.com/deckyard/deck-oauthext"
 repoLabel = "Source"
-editUrl = "https://github.com/jennifer-language/deck-oauthext/edit/main/docs/{path}"
+editUrl = "https://github.com/deckyard/deck-oauthext/edit/main/docs/{path}"
 
 [highlight]
 enabled = true
